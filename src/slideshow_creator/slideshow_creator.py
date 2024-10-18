@@ -4,7 +4,6 @@ import shlex
 
 
 class videoConfig:
-
     def __init__(
         self,
         imagePaths: list[str],
@@ -27,7 +26,6 @@ class videoConfig:
 
 
 class videoCreator:
-
     def __init__(self, videoConfig: videoConfig, outputLogFiles=False):
         self.videoConfig = videoConfig
         self.outputLogFiles = outputLogFiles
@@ -35,7 +33,6 @@ class videoCreator:
     def createMp4(self):
         # create command
         command = self.__createCommand()
-        print(command)
         self.__runCommand(command)
         return
 
@@ -98,7 +95,6 @@ class videoCreator:
         return filterComplex
 
     def __runCommand(self, command: list[str]):
-        # runs the command, shlex.split ensures we can run in linux
         subprocess.run(command)
 
 
