@@ -3,15 +3,16 @@ import subprocess
 import shlex
 
 
-class videoConfig:
+class VideoConfig:
+
     def __init__(
         self,
         imagePaths: list[str],
         audioPath: str,
         outputPath: str,
         transitionLength=1,
-        addZooms=True,
-        addTransitions=True,
+        addZooms=True,  # TODO: Does not work
+        addTransitions=True,  # TODO: Does not work
         frameLength=5,
         frameRate=30,
     ):
@@ -25,8 +26,8 @@ class videoConfig:
         self.transitionLength = transitionLength
 
 
-class videoCreator:
-    def __init__(self, videoConfig: videoConfig, outputLogFiles=False):
+class VideoCreator:
+    def __init__(self, videoConfig: VideoConfig, outputLogFiles=False):
         self.videoConfig = videoConfig
         self.outputLogFiles = outputLogFiles
 
@@ -96,22 +97,3 @@ class videoCreator:
 
     def __runCommand(self, command: list[str]):
         subprocess.run(command)
-
-
-def main():
-    imagePaths = [
-        "./images/image001.jpg",
-        "./images/image002.jpg",
-        "./images/image003.jpg",
-        "./images/image004.jpg",
-    ]
-    config = videoConfig(
-        imagePaths, "./images/audio.mp3", "plswork.mp4", transitionLength=3
-    )
-
-    creator = videoCreator(config)
-    creator.createMp4()
-
-
-if __name__ == "__main__":
-    main()
