@@ -29,7 +29,7 @@ class VideoConfig:
 class VideoCreator:
     def __init__(self, videoConfig: VideoConfig, outputLogFiles=False):
         self.videoConfig = videoConfig
-        self.outputLogFiles = outputLogFiles
+        self.outputLogFiles = outputLogFiles  # TODO: Does not work
 
     def createMp4(self):
         # create command
