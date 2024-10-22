@@ -1,0 +1,1 @@
+python ./src/videoUploaders/youtubeVideoUploader.py  --file="./outputs/SZDFC.mp4" --title="Test Video" --description="Test Video Description" --keywords="winter,wonderland" --category="22" --privacyStatus="private"

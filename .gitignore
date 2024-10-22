@@ -2,3 +2,5 @@
 /outputs
 /audio
 **/__pycache__
+client_secret.json
+/env
